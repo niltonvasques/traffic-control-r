@@ -1,0 +1,167 @@
+VARIÁVEIS LINGUÍSTICAS
+
+-- PRIMEIRO MODELO
+
+	* TAXA DE FLUXO DE VEÍCULOS
+	* MOVIMENTO DE PEDESTRES
+
+default: vermelho 20 segundos
+
+in: 5 carros /s 
+
+in: 0 pedestre esperando
+
+out: MAX = 160 segundos
+
+-------------------------------------
+
+in: 5 carros /s
+
+in: 1 pedestre esperando
+
+out: 120 segundos
+
+-- SEGUNDO MODELO
+	* TAXA DE FLUXO DE VEÍCULOS [arrays]
+	* MOVIMENTO DE PEDESTRES [arrays]
+	* NUMERO DE VIAS
+
+in: 1: 5 carros/s 2: 1 carro /s
+in: 1: 1 pedestre esperando  2: 100 pedestres esperando
+in: 2
+out: 
+
+
+VIA 1 -> Verde por 160 segundos
+VIA 2 -> Verde por 1 segundos
+
+fila:
+	VIA 2, 5 * 1 = 5  11 * 1 = 11
+	VIA 1, 1 * 10 = 10	
+	VIA 5
+	VIA 3
+
+-- TERCEIRO MODELO 
+-- AS CONVERSÕES NÃO FORAM TRATADAS
+
+	* TAXA DE FLUXO DE VEÍCULOS VIA CORRENTE
+	* MOVIMENTO DE PEDESTRES VIA CORRENTE
+	* QUANTIDADE DE VEÍCULOS NAS FILAS DAS OUTRAS VIAS
+	
+
+in: 0.02+ carros/seg
+in: 0 pedestre esperando  
+in: 0 carros
+out: Infinito
+
+in: 0 carros/seg
+in: 1+ pedestre esperando  
+in: 0 carros
+out: 0
+
+in: 0 carros/seg
+in: 0 pedestre esperando  
+in: 1+ carros
+out: 0
+
+in: 0 carros/seg
+in: 0 pedestre esperando  
+in: 0 carros
+out: NA
+
+in: 0.5 carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 70
+
+in: 0.5 carros/seg
+in: 5 pedestre esperando  
+in: 0 carros
+out: 65
+
+in: 0.5 carros/seg
+in: 10 pedestre esperando  
+in: 0 carros
+out: 60
+
+in: 0.5 carros/seg
+in: 15 pedestre esperando  
+in: 0 carros
+out: 55
+
+in: 0.5 carros/seg
+in: 20+ pedestre esperando  
+in: 0 carros
+out: 50
+
+in: 0.5 carros/seg
+in: 0 pedestre esperando  
+in: 1 carros (1,4 PEDESTRES)
+out: 115
+
+in: 0.5 carros/seg
+in: 0 pedestre esperando  
+in: 5 carros (7,5 PEDESTRES)
+out: 83
+
+in: 0.5 carros/seg
+in: 0 pedestre esperando  
+in: 10 carros (14 PEDESTRES)
+out: 60
+
+in: 0.5 carros/seg
+in: 0 pedestre esperando  
+in: 15+ carros (21 PEDESTRES)
+OUT: 50
+
+in: 0.02 carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 10
+
+in: 0.1 carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 15
+
+in: 0.2 carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 20
+
+in: 0.4 carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 56
+
+in: 0.7 carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 98
+
+in: 1.0+ carros/seg
+in: 1 pedestre esperando  
+in: 0 carros
+out: 150
+
+in: 1.0+ carros/seg
+in: 5 pedestre esperando  
+in: 0 carros
+out: 100
+
+-----------------------------------------------------------------
+Lógica do funcionamento da Fila
+
+VIA 1 -> Verde por 160 segundos
+VIA 2 -> Verde por 1 segundos
+
+fila:
+	VIA 2, 5 * 1 = 5  11 * 1 = 11
+	VIA 1, 1 * 10 = 10	
+	VIA 5
+	VIA 3
+
+------------------------------------------------------------------
+
+
+
