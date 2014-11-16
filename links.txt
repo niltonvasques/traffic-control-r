@@ -1,0 +1,7 @@
+Simuladores:
+
+http://www.traffic-simulation.de/brazil
+
+http://www.phy.ntnu.edu.tw/oldjava/Others/trafficSimulation/applet.html
+
+http://sourceforge.net/projects/atsimu/
