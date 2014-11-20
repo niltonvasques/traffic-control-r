@@ -1,15 +1,16 @@
+﻿library(frbs)                       # Importando biblioteca
+
 rm(list=ls(all=TRUE))               # Comando que limpa todos os objetos antigos
-library(frbs)                       # Importando biblioteca
 
-traffic.data.numlinvar.in <- 3 		# Quantidade de antecedentes
+traffic.data.numlinvar.in <- 3      # Quantidade de antecedentes
 
-traffic.data.numlinvar.out <- 1		# Quantidade de consequentes
+traffic.data.numlinvar.out <- 1     # Quantidade de consequentes
 
-traffic.data.length <- 120			# Tamanho da base de dados
+traffic.data.length <- 120          # Tamanho da base de dados
 
 traffic.data <- matrix(,traffic.data.length, traffic.data.numlinvar.out + traffic.data.numlinvar.in )
 
-#                				FLUXO|QTD_PED |SIZE_F |TEMPO_VERDE
+#                FLUXO | QTD_PED |SIZE_F|TEMPO_VERDE
 
 traffic.data[1,] 	 <- 	c( 	0.02,   0.0, 	0.0, 	1000 	)
 traffic.data[2,] 	 <- 	c( 	0.5, 	0.0, 	0.0, 	1000 	)
