@@ -1,6 +1,5 @@
-﻿library(frbs)                       # Importando biblioteca
-
 rm(list=ls(all=TRUE))               # Comando que limpa todos os objetos antigos
+﻿library(frbs)                       # Importando biblioteca
 
 traffic.data.numlinvar.in <- 3      # Quantidade de antecedentes
 
