@@ -1,4 +1,4 @@
-library(frbs)
+﻿library(frbs)
 
 traffic.data.numlinvar.in <- 3
 
@@ -24,50 +24,50 @@ traffic.data[13,]	 <- 	c( 	6.0, 	0.0, 	0.0, 	1000 	)
 traffic.data[14,]	 <- 	c( 	6.5, 	0.0, 	0.0, 	1000 	)
 traffic.data[15,]	 <- 	c( 	7.0, 	0.0, 	0.0, 	1000 	)
 traffic.data[16,]	 <- 	c( 	7.5, 	0.0, 	0.0, 	1000 	)
-traffic.data[17,]	 <- 	c( 	0.0, 	1.0, 	0.0, 	-1 	)
-traffic.data[18,]	 <- 	c( 	0.0, 	6.0, 	0.0, 	-1 	)
-traffic.data[19,]	 <- 	c( 	0.0, 	11.0, 	0.0, 	-1	)
-traffic.data[20,]	 <- 	c( 	0.0, 	16.0, 	0.0, 	-1	)
-traffic.data[21,]	 <- 	c( 	0.0, 	21.0, 	0.0, 	-1	)
-traffic.data[22,]	 <- 	c( 	0.0, 	26.0, 	0.0, 	-1	)
-traffic.data[23,]	 <- 	c( 	0.0, 	31.0, 	0.0, 	-1	)
-traffic.data[24,]	 <- 	c( 	0.0, 	36.0, 	0.0, 	-1	)
-traffic.data[25,]	 <- 	c( 	0.0, 	41.0, 	0.0, 	-1	)
-traffic.data[26,]	 <- 	c( 	0.0, 	46.0, 	0.0, 	-1	)
-traffic.data[27,]	 <- 	c( 	0.0, 	51.0, 	0.0, 	-1	)
-traffic.data[28,]	 <- 	c( 	0.0, 	56.0, 	0.0, 	-1	)
-traffic.data[29,]	 <- 	c( 	0.0, 	61.0, 	0.0, 	-1	)
-traffic.data[30,]	 <- 	c( 	0.0, 	66.0, 	0.0, 	-1	)
-traffic.data[31,]	 <- 	c( 	0.0, 	71.0, 	0.0, 	-1	)
-traffic.data[32,]	 <- 	c( 	0.0, 	76.0, 	0.0, 	-1	)
-traffic.data[33,]	 <- 	c( 	0.0, 	81.0, 	0.0, 	-1	)
-traffic.data[34,]	 <- 	c( 	0.0, 	86.0, 	0.0, 	-1	)
-traffic.data[35,]	 <- 	c( 	0.0, 	91.0, 	0.0, 	-1	)
-traffic.data[36,]	 <- 	c( 	0.0, 	96.0, 	0.0, 	-1	)
-traffic.data[37,]	 <- 	c( 	0.0, 	101.0, 	0.0, 	-1 	)
-traffic.data[38,]	 <- 	c( 	0.0, 1000.0, 	0.0, 	-1	)
-traffic.data[39,]	 <- 	c( 	0.0, 	0.0, 	1.0, 	-1 	)
-traffic.data[40,]	 <- 	c( 	0.0, 	0.0, 	6.0, 	-1 	)
-traffic.data[41,]	 <- 	c( 	0.0, 	0.0, 	11.0, 	-1 	)
-traffic.data[42,]	 <- 	c( 	0.0, 	0.0, 	16.0, 	-1 	)
-traffic.data[43,]	 <- 	c( 	0.0, 	0.0, 	21.0, 	-1 	)
-traffic.data[44,]	 <- 	c( 	0.0, 	0.0, 	26.0, 	-1 	)
-traffic.data[45,]	 <- 	c( 	0.0, 	0.0, 	31.0, 	-1 	)
-traffic.data[46,]	 <- 	c( 	0.0, 	0.0, 	36.0, 	-1 	)
-traffic.data[47,]	 <- 	c( 	0.0, 	0.0, 	41.0, 	-1 	)
-traffic.data[48,]	 <- 	c( 	0.0, 	0.0, 	46.0, 	-1 	)
-traffic.data[49,]	 <- 	c( 	0.0, 	0.0, 	51.0, 	-1 	)
-traffic.data[50,]	 <- 	c( 	0.0, 	0.0, 	56.0, 	-1 	)
-traffic.data[51,]	 <- 	c( 	0.0, 	0.0, 	61.0, 	-1 	)
-traffic.data[52,]	 <- 	c( 	0.0, 	0.0, 	66.0, 	-1 	)
-traffic.data[53,]	 <- 	c( 	0.0, 	0.0, 	71.0, 	-1 	)
-traffic.data[54,]	 <- 	c( 	0.0, 	0.0, 	76.0, 	-1 	)
-traffic.data[55,]	 <- 	c( 	0.0, 	0.0, 	81.0, 	-1 	)
-traffic.data[56,]	 <- 	c( 	0.0, 	0.0, 	86.0, 	-1 	)
-traffic.data[57,]	 <- 	c( 	0.0, 	0.0, 	91.0, 	-1 	)
-traffic.data[58,]	 <- 	c( 	0.0, 	0.0, 	96.0, 	-1 	)
-traffic.data[59,]	 <- 	c( 	0.0, 	0.0, 	1000, 	-1  	)
-traffic.data[60,]	 <- 	c( 	0.0, 	0.0, 	0.0, 	-100  	)
+traffic.data[17,]	 <- 	c( 	0.0, 	1.0, 	0.0, 	0 	)
+traffic.data[18,]	 <- 	c( 	0.0, 	6.0, 	0.0, 	0 	)
+traffic.data[19,]	 <- 	c( 	0.0, 	11.0, 	0.0, 	0	)
+traffic.data[20,]	 <- 	c( 	0.0, 	16.0, 	0.0, 	0	)
+traffic.data[21,]	 <- 	c( 	0.0, 	21.0, 	0.0, 	0	)
+traffic.data[22,]	 <- 	c( 	0.0, 	26.0, 	0.0, 	0	)
+traffic.data[23,]	 <- 	c( 	0.0, 	31.0, 	0.0, 	0	)
+traffic.data[24,]	 <- 	c( 	0.0, 	36.0, 	0.0, 	0	)
+traffic.data[25,]	 <- 	c( 	0.0, 	41.0, 	0.0, 	0	)
+traffic.data[26,]	 <- 	c( 	0.0, 	46.0, 	0.0, 	0	)
+traffic.data[27,]	 <- 	c( 	0.0, 	51.0, 	0.0, 	0	)
+traffic.data[28,]	 <- 	c( 	0.0, 	56.0, 	0.0, 	0	)
+traffic.data[29,]	 <- 	c( 	0.0, 	61.0, 	0.0, 	0	)
+traffic.data[30,]	 <- 	c( 	0.0, 	66.0, 	0.0, 	0	)
+traffic.data[31,]	 <- 	c( 	0.0, 	71.0, 	0.0, 	0	)
+traffic.data[32,]	 <- 	c( 	0.0, 	76.0, 	0.0, 	0	)
+traffic.data[33,]	 <- 	c( 	0.0, 	81.0, 	0.0, 	0	)
+traffic.data[34,]	 <- 	c( 	0.0, 	86.0, 	0.0, 	0	)
+traffic.data[35,]	 <- 	c( 	0.0, 	91.0, 	0.0, 	0	)
+traffic.data[36,]	 <- 	c( 	0.0, 	96.0, 	0.0, 	0	)
+traffic.data[37,]	 <- 	c( 	0.0, 	101.0, 	0.0, 	0 	)
+traffic.data[38,]	 <- 	c( 	0.0,    1000.0,	0.0, 	0	)
+traffic.data[39,]	 <- 	c( 	0.0, 	0.0, 	1.0, 	0 	)
+traffic.data[40,]	 <- 	c( 	0.0, 	0.0, 	6.0, 	0 	)
+traffic.data[41,]	 <- 	c( 	0.0, 	0.0, 	11.0, 	0 	)
+traffic.data[42,]	 <- 	c( 	0.0, 	0.0, 	16.0, 	0 	)
+traffic.data[43,]	 <- 	c( 	0.0, 	0.0, 	21.0, 	0 	)
+traffic.data[44,]	 <- 	c( 	0.0, 	0.0, 	26.0, 	0 	)
+traffic.data[45,]	 <- 	c( 	0.0, 	0.0, 	31.0, 	0 	)
+traffic.data[46,]	 <- 	c( 	0.0, 	0.0, 	36.0, 	0 	)
+traffic.data[47,]	 <- 	c( 	0.0, 	0.0, 	41.0, 	0 	)
+traffic.data[48,]	 <- 	c( 	0.0, 	0.0, 	46.0, 	0 	)
+traffic.data[49,]	 <- 	c( 	0.0, 	0.0, 	51.0, 	0 	)
+traffic.data[50,]	 <- 	c( 	0.0, 	0.0, 	56.0, 	0 	)
+traffic.data[51,]	 <- 	c( 	0.0, 	0.0, 	61.0, 	0 	)
+traffic.data[52,]	 <- 	c( 	0.0, 	0.0, 	66.0, 	0 	)
+traffic.data[53,]	 <- 	c( 	0.0, 	0.0, 	71.0, 	0 	)
+traffic.data[54,]	 <- 	c( 	0.0, 	0.0, 	76.0, 	0 	)
+traffic.data[55,]	 <- 	c( 	0.0, 	0.0, 	81.0, 	0 	)
+traffic.data[56,]	 <- 	c( 	0.0, 	0.0, 	86.0, 	0 	)
+traffic.data[57,]	 <- 	c( 	0.0, 	0.0, 	91.0, 	0 	)
+traffic.data[58,]	 <- 	c( 	0.0, 	0.0, 	96.0, 	0 	)
+traffic.data[59,]	 <- 	c( 	0.0, 	0.0, 	1000, 	0  	)
+traffic.data[60,]	 <- 	c( 	0.0, 	0.0, 	0.0, 	0  	)
 traffic.data[61,]	 <- 	c( 	0.5, 	1.0, 	0.0, 	70  	)
 traffic.data[62,]	 <- 	c( 	0.5, 	5.0, 	0.0, 	65  	)
 traffic.data[63,]	 <- 	c( 	0.5, 	10.0, 	0.0, 	60 	)
@@ -130,6 +130,7 @@ traffic.data[119,] 	 <- 	c( 	7.0, 	5.0, 	0.0, 	100 	)
 traffic.data[120,] 	 <- 	c( 	8.0, 	5.0, 	0.0, 	100 	)
 
 
+
 traffic.shuffled <- traffic.data[sample(nrow(traffic.data)),]
 
 train <- round( (66/100)*nrow(traffic.shuffled))        # Método HoldOut -> 66% para treinamento e 33% para teste
@@ -139,26 +140,31 @@ traffic.train <- traffic.shuffled[1:train,]
 traffic.tst <- traffic.shuffled[test:nrow(traffic.shuffled),1:3]
 traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),4], ncol = 1)
 
-traffic.data.range <- apply(traffic.shuffled[,-ncol(traffic.shuffled)], 2,range)
+traffic.data.range <- apply(traffic.shuffled[,-ncol(traffic.shuffled)], 2, range)
 
 ## Set the method and its parameters. In this case we use FRBCS.W algorithm
-method.type <- "FRBCS.W"
-control <- list(num.labels = 7, type.mf = "GAUSSIAN", type.tnorm = "MIN", type.snorm = "MAX", type.implication.func = "ZADEH", name = "Traffic")
+method.type <- "WM"
+control <- list(num.labels = 5, type.mf = "GAUSSIAN", type.tnorm = "MIN", type.snorm = "MAX", type.implication.func = "ZADEH", name = "Traffic")
 
 ## Learning step: Generate fuzzy model
 object.cls <- frbs.learn(traffic.train, traffic.data.range, method.type, control)
 
 ### Predicting step: Predict newdata
-#res.test <- predict(object.cls, traffic.tst)
-#
+res.test <- predict(object.cls, traffic.tst)
+
 ### Display the FRBS model
 #summary(object.cls)
 #
 ### Plot the membership functions
 #plotMF(object.cls)
 
+## error calculation
+err = 100*sum(traffic.class!=res.test)/nrow(traffic.class)
 
+print("The result: ")
 
+print(res.test)
 
+print("Percentage Error!!!")
 
-
+print(err)
