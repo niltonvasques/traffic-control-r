@@ -166,3 +166,24 @@ res.test <- predict(object.cls, traffic.tst)
 #
 ### Plot the membership functions
 #plotMF(object.cls)
+
+print("The result: ")
+
+print(res.test)
+
+## Error calculation
+y.pred <- res.test
+y.real <- traffic.class 
+bench <- cbind(y.pred, y.real)
+colnames(bench) <- c("pred. val.", "real. val.")
+print("Comparison WM Vs Real Value on Mackey Glass Data Set")
+print(bench)
+residuals <- (y.real - y.pred)
+MSE <- mean(residuals^2)
+RMSE <- sqrt(mean(residuals^2))
+SMAPE <- mean(abs(residuals)/(abs(y.real) + abs(y.pred))/2)*100
+err <- c(MSE, RMSE, SMAPE)
+names(err) <- c("MSE", "RMSE", "SMAPE")
+print("WM: Error Measurement: ")
+print(err) 
+
