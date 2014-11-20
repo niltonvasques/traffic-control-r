@@ -1,4 +1,5 @@
-﻿library(frbs)
+rm(list=ls(all=TRUE))
+library(frbs)
 
 traffic.data.numlinvar.in <- 3
 
@@ -133,6 +134,8 @@ traffic.data[120,] 	 <- 	c( 	8.0, 	5.0, 	0.0, 	100 	)
 
 traffic.shuffled <- traffic.data[sample(nrow(traffic.data)),]
 
+traffic.shuffled <- traffic.shuffled / 1000
+
 train <- round( (66/100)*nrow(traffic.shuffled))        # Método HoldOut -> 66% para treinamento e 33% para teste
 test <- (train+1)
 
@@ -140,7 +143,7 @@ traffic.train <- traffic.shuffled[1:train,]
 traffic.tst <- traffic.shuffled[test:nrow(traffic.shuffled),1:3]
 traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),4], ncol = 1)
 
-traffic.data.range <- apply(traffic.shuffled[,-ncol(traffic.shuffled)], 2, range)
+traffic.data.range <- apply(traffic.shuffled[,], 2, range)
 
 ## Set the method and its parameters. In this case we use FRBCS.W algorithm
 method.type <- "WM"
@@ -158,13 +161,27 @@ res.test <- predict(object.cls, traffic.tst)
 ### Plot the membership functions
 #plotMF(object.cls)
 
-## error calculation
-err = 100*sum(traffic.class!=res.test)/nrow(traffic.class)
-
 print("The result: ")
 
 print(res.test)
 
-print("Percentage Error!!!")
+## Error calculation
+y.pred <- res.test
+y.real <- traffic.class 
+bench <- cbind(y.pred, y.real)
+colnames(bench) <- c("pred. val.", "real. val.")
+print("Comparison WM Vs Real Value on Mackey Glass Data Set")
+print(bench)
+residuals <- (y.real - y.pred)
+MSE <- mean(residuals^2)
+RMSE <- sqrt(mean(residuals^2))
+SMAPE <- mean(abs(residuals)/(abs(y.real) + abs(y.pred))/2)*100
+err <- c(MSE, RMSE, SMAPE)
+names(err) <- c("MSE", "RMSE", "SMAPE")
+print("WM: Error Measurement: ")
+print(err) 
 
-print(err)
+
+
+
+

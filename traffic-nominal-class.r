@@ -1,3 +1,4 @@
+rm(list=ls(all=TRUE))
 library(frbs)
 
 traffic.data.numlinvar.in <- 3
@@ -157,16 +158,24 @@ summary(object.cls)
 ### Plot the membership functions
 #plotMF(object.cls)
 
-## error calculation
-err = 100*sum(traffic.class!=res.test)/nrow(traffic.class)
-
 print("The result: ")
 
 print(res.test)
-
-print("Percentage Error!!!")
-
-print(err)
+## Error calculation
+y.pred <- res.test
+y.real <- traffic.class 
+bench <- cbind(y.pred, y.real)
+colnames(bench) <- c("pred. val.", "real. val.")
+print("Comparison WM Vs Real Value on Mackey Glass Data Set")
+print(bench)
+residuals <- (y.real - y.pred)
+MSE <- mean(residuals^2)
+RMSE <- sqrt(mean(residuals^2))
+SMAPE <- mean(abs(residuals)/(abs(y.real) + abs(y.pred))/2)*100
+err <- c(MSE, RMSE, SMAPE)
+names(err) <- c("MSE", "RMSE", "SMAPE")
+print("WM: Error Measurement: ")
+print(err) 
 
 
 
