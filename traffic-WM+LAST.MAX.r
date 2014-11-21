@@ -198,6 +198,15 @@ for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "mediu
 for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "large") object.cls$rule[,16][i] = "Demorado"}
 for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "very.large") object.cls$rule[,16][i] = "Muito Demorado"}
 
+object.cls$rule[,1] <- c("Se")
+object.cls$rule[,3] <- c("é")
+object.cls$rule[,5] <- c("e")
+object.cls$rule[,7] <- c("é")
+object.cls$rule[,9] <- c("e")
+object.cls$rule[,11] <- c("é")
+object.cls$rule[,13] <- c("então")
+object.cls$rule[,15] <- c("é")
+
 ### Display the FRBS model
 #summary(object.cls)
 #
