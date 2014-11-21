@@ -1,4 +1,5 @@
-﻿library(frbs)                       # Importando biblioteca
+
+library(frbs)                       # Importando biblioteca
 
 rm(list=ls(all=TRUE))               # Comando que limpa todos os objetos antigos
 
@@ -149,7 +150,7 @@ traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),4], ncol = 
 traffic.data.range <- apply(traffic.shuffled[,], 2, range)
 
 ## Set the method and its parameters. In this case we use FRBCS.W algorithm
-method.type <- "WM"
+method.type <- "HyFIS"
 control <- list(num.labels = 5, max.iter = 10, step.size = 0.01, type.mf = "GAUSSIAN", type.tnorm = "MIN", type.snorm = "MAX", type.implication.func = "ZADEH", name = "Traffic")
 
 ## Learning step: Generate fuzzy model
