@@ -140,7 +140,7 @@ traffic.data[120,]  <- c( 8.0, 5.0, 0, 100 )
 
 traffic.shuffle <- traffic.data[sample(nrow(traffic.data)),]
 
-traffic.shuffled <- (traffic.shuffle / 1000)
+traffic.shuffled <- (traffic.shuffle/1000)
 
 train <- round( (66/100)*nrow(traffic.shuffled))        # Método HoldOut -> 66% para treinamento e 33% para teste
 test <- (train+1)
@@ -158,8 +158,45 @@ control <- list(num.labels = 5, type.mf = "GAUSSIAN", type.defuz = "WAM", type.t
 ## Learning step: Generate fuzzy model
 object.cls <- frbs.learn(traffic.train, traffic.data.range, method.type, control)
 
+
 ### Predicting step: Predict newdata
 res.test <- predict(object.cls, traffic.tst)
+
+## Ajustando ao nosso problema
+
+object.cls$colnames.var = c("Fluxo", "Qtd_pedestres", "Tamanho_fila", "Tempo_verde")
+
+object.cls$rule[,2] <- c("Fluxo")
+
+for (i in 1:length(object.cls$rule[,4])) {if (object.cls$rule[,4][i] == "very.small") object.cls$rule[,4][i] = "Muito Baixo"}
+for (i in 1:length(object.cls$rule[,4])) {if (object.cls$rule[,4][i] == "small") object.cls$rule[,4][i] = "Baixo"}
+for (i in 1:length(object.cls$rule[,4])) {if (object.cls$rule[,4][i] == "medium") object.cls$rule[,4][i] = "Medio"}
+for (i in 1:length(object.cls$rule[,4])) {if (object.cls$rule[,4][i] == "large") object.cls$rule[,4][i] = "Intenso"}
+for (i in 1:length(object.cls$rule[,4])) {if (object.cls$rule[,4][i] == "very.large") object.cls$rule[,4][i] = "Muito Intenso"}
+
+object.cls$rule[,6] <- c("Qtd_pedestres")
+
+for (i in 1:length(object.cls$rule[,8])) {if (object.cls$rule[,8][i] == "very.small") object.cls$rule[,8][i] = "Muito Pouca"}
+for (i in 1:length(object.cls$rule[,8])) {if (object.cls$rule[,8][i] == "small") object.cls$rule[,8][i] = "Pouca"}
+for (i in 1:length(object.cls$rule[,8])) {if (object.cls$rule[,8][i] == "medium") object.cls$rule[,8][i] = "Media"}
+for (i in 1:length(object.cls$rule[,8])) {if (object.cls$rule[,8][i] == "large") object.cls$rule[,8][i] = "Muita"}
+for (i in 1:length(object.cls$rule[,8])) {if (object.cls$rule[,8][i] == "very.large") object.cls$rule[,8][i] = "Extrema"}
+
+object.cls$rule[,10] <- c("Tamanho_fila")
+
+for (i in 1:length(object.cls$rule[,12])) {if (object.cls$rule[,12][i] == "very.small") object.cls$rule[,12][i] = "Muito Pequeno"}
+for (i in 1:length(object.cls$rule[,12])) {if (object.cls$rule[,12][i] == "small") object.cls$rule[,12][i] = "Pequeno"}
+for (i in 1:length(object.cls$rule[,12])) {if (object.cls$rule[,12][i] == "medium") object.cls$rule[,12][i] = "Medio"}
+for (i in 1:length(object.cls$rule[,12])) {if (object.cls$rule[,12][i] == "large") object.cls$rule[,12][i] = "Grande"}
+for (i in 1:length(object.cls$rule[,12])) {if (object.cls$rule[,12][i] == "very.large") object.cls$rule[,12][i] = "Muito Grande"}
+
+object.cls$rule[,14] <- c("Tempo_verde")
+
+for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "very.small") object.cls$rule[,16][i] = "Muito Rapido"}
+for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "small") object.cls$rule[,16][i] = "Rapido"}
+for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "medium") object.cls$rule[,16][i] = "Tempo Medio"}
+for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "large") object.cls$rule[,16][i] = "Demorado"}
+for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "very.large") object.cls$rule[,16][i] = "Muito Demorado"}
 
 ### Display the FRBS model
 #summary(object.cls)
@@ -186,4 +223,9 @@ err <- c(MSE, RMSE, SMAPE)
 names(err) <- c("MSE", "RMSE", "SMAPE")
 print("WM: Error Measurement: ")
 print(err) 
+
+#defuzzifier(traffic.shuffled, rule = object.cls$rule, range.output = object.cls$range[,4],
+#    names.varoutput =  c("Muito Rápido", "Rápido", "Tempo Médio", "Demorado", "Muito Demorado"), varout.mf = object.cls$varout.mf, miu.rule,
+#    type.defuz = WAM, type.model = 1, func.tsk = NULL)
+
 
