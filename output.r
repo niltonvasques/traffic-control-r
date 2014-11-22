@@ -57,6 +57,7 @@ object.cls$rule[,15] <- c("=")
 
 traffic.class.denorm <- denorm.data(traffic.class, matrix(traffic.data.range.desnorm[,4],ncol=1,byrow = TRUE), min.scale = 0, max.scale = 1)
 res.test.denorm <- denorm.data(res.test, matrix(traffic.data.range.desnorm[,4],ncol=1,byrow = TRUE), min.scale = 0, max.scale = 1)
+res.test.denorm <- round(res.test.denorm)
 
 print("Comparando os valores estimados com os reais")
 print(cbind(res.test.denorm, traffic.class.denorm))
