@@ -12,7 +12,7 @@ traffic.data <- matrix(,traffic.data.length, traffic.data.numlinvar.out + traffi
 
 #                FLUXO | QTD_PED |SIZE_F|TEMPO_VERDE
 
-traffic.data[1,]  <- c( 0.1,  0, 0, 150 )
+traffic.data[1,]  <- c( 0.1, 0, 0, 150 )
 traffic.data[2,]  <- c( 0.5, 0, 0, 150 )
 traffic.data[3,]  <- c( 1.0, 0, 0, 150 )
 traffic.data[4,]  <- c( 1.5, 0, 0, 150 )
@@ -71,7 +71,7 @@ traffic.data[56,] <- c( 0, 0, 86.0, 0 )
 traffic.data[57,] <- c( 0, 0, 91.0, 0 )
 traffic.data[58,] <- c( 0, 0, 96.0, 0 )
 traffic.data[59,] <- c( 0, 0, 150, 0  )
-traffic.data[60,] <- c( 0, 0, 0, 000  )
+traffic.data[60,] <- c( 0, 0, 0, 0  )
 traffic.data[61,] <- c( 0.5, 1.0, 0, 70  )
 traffic.data[62,] <- c( 0.5, 5.0, 0, 65  )
 traffic.data[63,] <- c( 0.5, 10.0, 0, 60 )
@@ -138,20 +138,28 @@ traffic.data[120,]  <- c( 8.0, 5.0, 0, 100 )
 
 
 
-traffic.shuffle <- traffic.data[sample(nrow(traffic.data)),]
+traffic.shuffled.desnormalizado <- traffic.data[sample(nrow(traffic.data)),]
 
-traffic.shuffled <- (traffic.shuffle/1000)
+# Não tinha isso de baixo, precisei fazer para encontrar o range.data e usar na função de normalização própria do sistema.
+traffic.data.range.desnorm <- apply(traffic.shuffled.desnormalizado[,], 2, range)
 
-train <- round( (66/100)*nrow(traffic.shuffled))        # Método HoldOut -> 66% para treinamento e 33% para teste
+# Normalização
+
+# traffic.shuffled <- (traffic.shuffled.desnormalizado/150)
+traffic.shuffled <- norm.data(traffic.shuffled.desnormalizado, traffic.data.range.desnorm, min.scale = 0, max.scale = 1)
+
+# Método HoldOut -> 66% para treinamento e 33% para teste
+
+train <- round( (66/100)*nrow(traffic.shuffled) )        
 test <- (train+1)
 
 traffic.train <- traffic.shuffled[1:train,]
 traffic.tst <- traffic.shuffled[test:nrow(traffic.shuffled),1:3]
 traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),4], ncol = 1)
-
+ 
 traffic.data.range <- apply(traffic.shuffled[,], 2, range)
 
-## Set the method and its parameters. In this case we use FRBCS.W algorithm
+## Set the method and its parameters. In this case we use WM algorithm
 method.type <- "HYFIS"
 control <- list(num.labels = 5, max.iter = 50, step.size = 0.01, type.tnorm = "MIN", type.snorm = "MAX", type.defuz = "WAM", type.implication.func = "ZADEH", name = "Traffic-HyFIS")
 
@@ -198,20 +206,20 @@ for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "mediu
 for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "large") object.cls$rule[,16][i] = "Demorado"}
 for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "very.large") object.cls$rule[,16][i] = "Muito Demorado"}
 
-colnames(object.cls$varinp.mf) <- c("Muito Baixo", "Baixo", "Médio", "Intenso", "Muito Intenso",
-					"Muito Pouca", "Pouca", "Média", "Muita", "Extrema",
-					"Muito Pequeno", "Pequeno", "Médio", "Grande", "Muito Grande")
+colnames(object.cls$varinp.mf) <- c("Muito Baixo",   "Baixo",   "Medio", "Intenso", "Muito Intenso",
+				    "Muito Pouca",   "Pouca",   "Media", "Muita",   "Extrema",
+				    "Muito Pequeno", "Pequeno", "Medio", "Grande",  "Muito Grande")
 
-colnames(object.cls$varout.mf) <- c("Muito Rápido", "Rápido", "Tempo Médio", "Demorado", "Muito Demorado")
+colnames(object.cls$varout.mf) <- c("Muito Rápido", "Rapido", "Tempo Medio", "Demorado", "Muito Demorado")
 
 object.cls$rule[,1] <- c("Se")
-object.cls$rule[,3] <- c("é")
+object.cls$rule[,3] <- c("=")
 object.cls$rule[,5] <- c("e")
-object.cls$rule[,7] <- c("é")
+object.cls$rule[,7] <- c("=")
 object.cls$rule[,9] <- c("e")
-object.cls$rule[,11] <- c("é")
-object.cls$rule[,13] <- c("então")
-object.cls$rule[,15] <- c("é")
+object.cls$rule[,11] <- c("=")
+object.cls$rule[,13] <- c("entao")
+object.cls$rule[,15] <- c("=")
 
 ### Display the FRBS model
 #summary(object.cls)
@@ -219,26 +227,25 @@ object.cls$rule[,15] <- c("é")
 ### Plot the membership functions
 #plotMF(object.cls)
 
-print("The result: ")
+traffic.class.denorm <- denorm.data(traffic.class, matrix(traffic.data.range.desnorm[,4],ncol=1,byrow = TRUE), min.scale = 0, max.scale = 1)
+res.test.denorm <- denorm.data(res.test, matrix(traffic.data.range.desnorm[,4],ncol=1,byrow = TRUE), min.scale = 0, max.scale = 1)
 
-print(res.test)
+print("Comparando os valores estimados com os reais")
+print(cbind(res.test.denorm, traffic.class.denorm))
 
-## Error calculation
+## Calculo do erro
+
 y.pred <- res.test
 y.real <- traffic.class 
 bench <- cbind(y.pred, y.real)
 colnames(bench) <- c("pred. val.", "real. val.")
-print("Comparison WM Vs Real Value on Mackey Glass Data Set")
-print(bench)
 residuals <- (y.real - y.pred)
 MSE <- mean(residuals^2)
 RMSE <- sqrt(mean(residuals^2))
 SMAPE <- mean(abs(residuals)/(abs(y.real) + abs(y.pred))/2)*100
 err <- c(MSE, RMSE, SMAPE)
 names(err) <- c("MSE", "RMSE", "SMAPE")
-print("WM: Error Measurement: ")
+print("WM: Avaliacao do erro: ")
 print(err) 
 
-#defuzzifier(traffic.shuffled, rule = object.cls$rule, range.output = object.cls$range[,4],
-#    names.varoutput =  c("Muito Rapido", "Rapido", "Tempo Medio", "Demorado", "Muito Demorado"), varout.mf = object.cls$varout.mf, miu.rule=res.test,
-#    type.defuz = "WAM", type.model = 1, func.tsk = NULL)
+
