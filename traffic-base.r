@@ -1,7 +1,6 @@
 
 library(frbs)                       # Importando biblioteca
 
-rm(list=ls(all=TRUE))               # Comando que limpa todos os objetos antigos
 
 traffic.data.numlinvar.in <- 3      # Quantidade de antecedentes
 
@@ -167,7 +166,7 @@ traffic.test[25,]  <- c( 2.0, 5.0, 0, 100 )
 traffic.test[26,]  <- c( 8.0, 5.0, 0, 100 )
 
 
-traffic.shuffled.desnormalizado <- traffic.data[sample(nrow(traffic.data)),]
+traffic.shuffled.desnormalizado <- traffic.data
 
 # Não tinha isso de baixo, precisei fazer para encontrar o range.data e usar na função de normalização própria do sistema.
 traffic.data.range.desnorm <- apply(traffic.shuffled.desnormalizado[,], 2, range)
