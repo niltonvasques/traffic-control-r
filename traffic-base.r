@@ -165,3 +165,25 @@ traffic.test[23,]  <- c( 8.0, 1.0, 0, 150 )
 traffic.test[24,]  <- c( 1.0, 5.0, 0, 100 )
 traffic.test[25,]  <- c( 2.0, 5.0, 0, 100 )
 traffic.test[26,]  <- c( 8.0, 5.0, 0, 100 )
+
+
+traffic.shuffled.desnormalizado <- traffic.data[sample(nrow(traffic.data)),]
+
+# Não tinha isso de baixo, precisei fazer para encontrar o range.data e usar na função de normalização própria do sistema.
+traffic.data.range.desnorm <- apply(traffic.shuffled.desnormalizado[,], 2, range)
+
+# Normalização
+
+# traffic.shuffled <- (traffic.shuffled.desnormalizado/150)
+traffic.shuffled <- norm.data(traffic.shuffled.desnormalizado, traffic.data.range.desnorm, min.scale = 0, max.scale = 1)
+
+# Método HoldOut -> 66% para treinamento e 33% para teste
+
+train <- round( (66/100)*nrow(traffic.shuffled) )        
+test <- (train+1)
+
+traffic.train <- traffic.shuffled[1:train,]
+traffic.tst <- traffic.shuffled[test:nrow(traffic.shuffled),1:3]
+traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),4], ncol = 1)
+ 
+traffic.data.range <- apply(traffic.shuffled[,], 2, range)
