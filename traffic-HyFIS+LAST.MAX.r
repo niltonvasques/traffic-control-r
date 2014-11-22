@@ -223,7 +223,7 @@ y.real <- traffic.class
 bench <- cbind(y.pred, y.real)
 colnames(bench) <- c("pred. val.", "real. val.")
 print("Comparison WM Vs Real Value on Mackey Glass Data Set")
-print(bench)[
+print(bench)
 residuals <- (y.real - y.pred)
 MSE <- mean(residuals^2)
 RMSE <- sqrt(mean(residuals^2))
