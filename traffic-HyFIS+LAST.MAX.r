@@ -207,6 +207,11 @@ object.cls$rule[,11] <- c("é")
 object.cls$rule[,13] <- c("então")
 object.cls$rule[,15] <- c("é")
 
+colnames(object.cls$varinp.mf) <- c("Muito Baixo", "Baixo", "Médio", "Intenso", "Muito Intenso",
+					"Muito Pouca", "Pouca", "Média", "Muita", "Extrema",
+					"Muito Pequeno", "Pequeno", "Médio", "Grande", "Muito Grande")
+
+colnames(object.cls$varout.mf) <- c("Muito Rápido", "Rápido", "Tempo Médio", "Demorado", "Muito Demorado")
 ### Display the FRBS model
 #summary(object.cls)
 #
