@@ -177,13 +177,15 @@ traffic.data.range.desnorm <- apply(traffic.shuffled.desnormalizado[,], 2, range
 # traffic.shuffled <- (traffic.shuffled.desnormalizado/150)
 traffic.shuffled <- norm.data(traffic.shuffled.desnormalizado, traffic.data.range.desnorm, min.scale = 0, max.scale = 1)
 
+traffic.test.norm <- norm.data(traffic.test, traffic.data.range.desnorm, min.scale = 0, max.scale = 1 )
+
 # Método HoldOut -> 66% para treinamento e 33% para teste
 
-train <- round( (66/100)*nrow(traffic.shuffled) )        
+train <- nrow(traffic.shuffled)         
 test <- (train+1)
 
 traffic.train <- traffic.shuffled[1:train,]
-traffic.tst <- traffic.shuffled[test:nrow(traffic.shuffled),1:3]
-traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),4], ncol = 1)
+traffic.tst <- traffic.test.norm[,1:3]
+traffic.class <- matrix(traffic.test.norm[,4], ncol = 1)
  
 traffic.data.range <- apply(traffic.shuffled[,], 2, range)
