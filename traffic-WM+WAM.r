@@ -1,4 +1,4 @@
-﻿library(frbs)                       # Importando biblioteca
+library(frbs)                       # Importando biblioteca
 
 rm(list=ls(all=TRUE))               # Comando que limpa todos os objetos antigos
 

@@ -142,7 +142,7 @@ traffic.shuffle <- traffic.data[sample(nrow(traffic.data)),]
 
 traffic.shuffled <- (traffic.shuffle/1000)
 
-train <- round( (66/100)*nrow(traffic.shuffled))        # Método HoldOut -> 66% para treinamento e 33% para teste
+train <- round( (66/100)*nrow(traffic.shuffled))        # MÃ©todo HoldOut -> 66% para treinamento e 33% para teste
 test <- (train+1)
 
 traffic.train <- traffic.shuffled[1:train,]
@@ -199,13 +199,13 @@ for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "large
 for (i in 1:length(object.cls$rule[,16])) {if (object.cls$rule[,16][i] == "very.large") object.cls$rule[,16][i] = "Muito Demorado"}
 
 object.cls$rule[,1] <- c("Se")
-object.cls$rule[,3] <- c("é")
+object.cls$rule[,3] <- c("Ã©")
 object.cls$rule[,5] <- c("e")
-object.cls$rule[,7] <- c("é")
+object.cls$rule[,7] <- c("Ã©")
 object.cls$rule[,9] <- c("e")
-object.cls$rule[,11] <- c("é")
-object.cls$rule[,13] <- c("então")
-object.cls$rule[,15] <- c("é")
+object.cls$rule[,11] <- c("Ã©")
+object.cls$rule[,13] <- c("entÃ£o")
+object.cls$rule[,15] <- c("Ã©")
 
 ### Display the FRBS model
 #summary(object.cls)
