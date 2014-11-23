@@ -7,7 +7,6 @@ control <- list(num.labels = 5, max.iter = 50, step.size = 0.01, type.tnorm = "M
 ## Learning step: Generate fuzzy model
 object.cls <- frbs.learn(traffic.train, traffic.data.range, method.type, control)
 
-
 ### Predicting step: Predict newdata
 res.test <- predict(object.cls, traffic.tst)
 
