@@ -17,12 +17,16 @@ runall <- function(){
 	performance <- c(1:4)
 	source("traffic-WM+FIRST.MAX.r")
 	performance[1] <- MSE
+	performance[5] <- RMSE
 	source("traffic-WM+LAST.MAX.r")
 	performance[2] <- MSE
+	performance[6] <- RMSE
 	source("traffic-HyFIS+FIRST.MAX.r")
 	performance[3] <- MSE
+	performance[7] <- RMSE
 	source("traffic-HyFIS+LAST.MAX.r")
 	performance[4] <- MSE
+	performance[8] <- RMSE
 	print( "-------------------RESULTADOS-------------------------" )
 	print( "-------[1] - WM+FIRST.MAX---------MSE: " )
 	print(performance[1])
@@ -32,6 +36,14 @@ runall <- function(){
 	print(performance[3])
 	print( "-------[4] - HyFIS+LAST.MAX-MSE: " )
 	print(performance[4])
+	print( "-------[1] - WM+FIRST.MAX---------RMSE: " )
+	print(performance[5])
+	print( "-------[2] - WM+LAST.MAX----RMSE: " )
+	print(performance[6])
+	print( "-------[3] - HyFIS+FIRST.MAX------RMSE: " )
+	print(performance[7])
+	print( "-------[4] - HyFIS+LAST.MAX-RMSE: " )
+	print(performance[8])
 }
 
 clear <- function() {
