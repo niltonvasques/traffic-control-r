@@ -10,4 +10,5 @@ object.cls <- frbs.learn(traffic.train, traffic.data.range, method.type, control
 ### Predicting step: Predict newdata
 res.test <- predict(object.cls, traffic.tst)
 
+source("adjust.r")
 source("output.r")

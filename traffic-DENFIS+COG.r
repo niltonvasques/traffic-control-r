@@ -4,7 +4,6 @@ source("traffic-base.r")
 method.type <- "DENFIS"
 control <- list(Dthr = 0.1, max.iter = 15, step.size = 0.1, d = 2, name = "Traffic")
 
-
 ## Learning step: Generate fuzzy model
 object.cls <- frbs.learn(traffic.train, traffic.data.range, method.type, control)
 
