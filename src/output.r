@@ -3,7 +3,7 @@
 summary(object.cls)
 
 ## Plot the membership functions
-plotMF(object.cls)
+#plotMF(object.cls)
 
 traffic.class.denorm <- denorm.data(traffic.class, matrix(traffic.data.range.desnorm[,4],ncol=1,byrow = TRUE), min.scale = 0, max.scale = 1)
 res.test.denorm <- denorm.data(res.test, matrix(traffic.data.range.desnorm[,4],ncol=1,byrow = TRUE), min.scale = 0, max.scale = 1)
