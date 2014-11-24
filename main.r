@@ -5,12 +5,14 @@ menu <- function(){
 	print( "-------------------------MENU-------------------------" )
 	print( "------------------------------------------------------" )
 	print( "-------ESCOLHA O ALGORITMO QUE DESEJA EXECUTAR--------" )
-	print( "-------[1] - WM+FIRST.MAX-----------------------------------" )
+	print( "-------[1] - WM+FIRST.MAX-----------------------------" )
 	print( "-------[2] - WM+LAST.MAX------------------------------" )
-	print( "-------[3] - HyFIS+FIRST.MAX--------------------------------" )
+	print( "-------[3] - HyFIS+FIRST.MAX--------------------------" )
 	print( "-------[4] - HyFIS+LAST.MAX---------------------------" )
 	print( "-------[5] - RUN ALL----------------------------------" )
 	print( "-------[6] - PLOT-------------------------------------" )
+	print( "-------[7] - WM+COG-----------------------------------" )
+	print( "-------[8] - DENFIS+COG-------------------------------" )
 	print( "------------------------------------------------------" )
 }
 runall <- function(){
@@ -54,7 +56,7 @@ menu()
 
 n <- readline("OPCAO: ")
 
-while(n > 0 && n < 7 ){
+while(n > 0 && n < 9 ){
 	if(is.na(n)){break}  # breaks when hit enter
 
 	if(n != 6) clear()
@@ -62,6 +64,8 @@ while(n > 0 && n < 7 ){
 	else if(n == 2) source("traffic-WM+LAST.MAX.r")
 	else if(n == 3) source("traffic-HyFIS+FIRST.MAX.r")
 	else if(n == 4) source("traffic-HyFIS+LAST.MAX.r")
+	else if(n == 7) source("traffic-WM+COG.r")
+	else if(n == 8) source("traffic-DENFIS+COG.r")
 	else if(n == 6) plotMF(object.cls)
 	else if(n == 5) {
 		runall()

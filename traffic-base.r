@@ -176,7 +176,7 @@ traffic.data.range.desnorm <- apply(traffic.shuffled.desnormalizado[,], 2, range
 # traffic.shuffled <- (traffic.shuffled.desnormalizado/150)
 traffic.shuffled <- norm.data(traffic.shuffled.desnormalizado, traffic.data.range.desnorm, min.scale = 0, max.scale = 1)
 
-traffic.test.norm <- norm.data(traffic.test, traffic.data.range.desnorm, min.scale = 0, max.scale = 1 )
+traffic.test.norm <- norm.data(traffic.data, traffic.data.range.desnorm, min.scale = 0, max.scale = 1 )
 
 # Método HoldOut -> 66% para treinamento e 33% para teste
 
