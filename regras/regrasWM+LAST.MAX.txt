@@ -9,6 +9,50 @@
 26 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =        Grande entao Tempo_verde   =   Muito Rapido
    
    
+4  Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =     Extrema  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =   Muito Rapido
+5  Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =  Muito Grande entao Tempo_verde   =   Muito Rapido
+6  Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =   Muito Rapido
+7  Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =         Medio entao Tempo_verde   =   Muito Rapido
+8  Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =       Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =   Muito Rapido
+9  Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =       Media  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =   Muito Rapido
+10 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =       Muita  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =   Muito Rapido
+12 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =       Pequeno entao Tempo_verde   =   Muito Rapido
+13 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   = Muito Demorado
+14 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =    Tempo Medio
+15 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =       Demorado
+16 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =       Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =         Rapido
+17 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =       Media  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =         Rapido
+18 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  =       Muita  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =         Rapido
+19 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =       Pequeno entao Tempo_verde   =         Rapido
+20 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =         Medio entao Tempo_verde   =         Rapido
+25 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  = Muito Pequeno entao Tempo_verde   =         Rapido
+26 Se Fluxo  =   Muito Baixo  e Qtd_pedestres  = Muito Pouca  e Tamanho_fila  =        Grande entao Tempo_verde   =   Muito Rapido
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
    
    
    
