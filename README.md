@@ -26,12 +26,18 @@ Acesse a pasta do repositório clonado:
 
 	cd traffic-control-r
 
+Entre no software R:
+
+	R
+
 Em seguida, é necessária a instalação do pacote frbs no software R, então no terminal do R
 digite o comando abaixo, onde INSTALL_DIR seja o diretório de instalação desejado.
 
 	install.packages("frbs",INSTALL_DIR)
 
-Depois que a instalação finalizar, basta executar o comando source("main.r").
+Depois que a instalação finalizar, basta executar o comando:
+
+	 source("main.r")
 
 
 
