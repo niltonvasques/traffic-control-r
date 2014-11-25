@@ -15,3 +15,24 @@ cruzamentos e paradas
 
 
 ○ Solução: Um controlador Fuzzy para semáforos.
+
+### Como executar ?
+
+Primeiramente clone o repositório com o comando abaixo:
+
+git clone https://github.com/niltonvasques/traffic-control-r
+
+Acesse a pasta do repositório clonado:
+
+cd traffic-control-r
+
+Em seguida, é necessária a instalação do pacote frbs no software R, então no terminal do R
+digite o comando abaixo, onde INSTALL_DIR seja o diretório de instalação desejado.
+	install.packages("frbs",INSTALL_DIR)
+
+Depois que a instalação finalizar, basta executar o comando source("main.r").
+
+
+
+
+
