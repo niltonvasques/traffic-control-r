@@ -18,13 +18,14 @@ cruzamentos e paradas
 
 ### Como executar ?
 
+
 Primeiramente clone o repositório com o comando abaixo:
 
 	git clone https://github.com/niltonvasques/traffic-control-r
 
 Acesse a pasta do repositório clonado:
 
-	cd traffic-control-r
+	cd traffic-control-r/src
 
 Entre no software R:
 
