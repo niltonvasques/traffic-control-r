@@ -56,7 +56,7 @@ menu()
 
 n <- readline("OPCAO: ")
 
-while(n > 0 && n <= 9 ){
+while(n > 0 && n <= 11 ){
 	if(is.na(n)){break}  # breaks when hit enter
 
 	if(n != 6) clear()
@@ -69,6 +69,8 @@ while(n > 0 && n <= 9 ){
 	else if(n == 7) source("traffic-WM+COG.r")
 	else if(n == 8) source("traffic-DENFIS+COG.r")
 	else if(n == 9) source("traffic-MOGUL+COG.r")
+	else if(n == 10) source("traffic-GEN2+COG.r")
+	else if(n == 11) source("traffic-LT+COG.r")
 	menu()	
 	n <- readline("OPCAO: ")
 }
