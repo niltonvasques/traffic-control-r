@@ -56,7 +56,7 @@ menu()
 
 n <- readline("OPCAO: ")
 
-while(n > 0 && n < 9 ){
+while(n > 0 && n <= 9 ){
 	if(is.na(n)){break}  # breaks when hit enter
 
 	if(n != 6) clear()
@@ -64,12 +64,11 @@ while(n > 0 && n < 9 ){
 	else if(n == 2) source("traffic-WM+LAST.MAX.r")
 	else if(n == 3) source("traffic-HyFIS+FIRST.MAX.r")
 	else if(n == 4) source("traffic-HyFIS+LAST.MAX.r")
+	else if(n == 5) runall()
+	else if(n == 6) plotMF(object.cls)
 	else if(n == 7) source("traffic-WM+COG.r")
 	else if(n == 8) source("traffic-DENFIS+COG.r")
-	else if(n == 6) plotMF(object.cls)
-	else if(n == 5) {
-		runall()
-	}
+	else if(n == 9) source("traffic-MOGUL+COG.r")
 	menu()	
 	n <- readline("OPCAO: ")
 }

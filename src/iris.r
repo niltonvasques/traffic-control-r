@@ -170,12 +170,14 @@ traffic.train <- traffic.shuffled[1:train,]
 traffic.tst <- traffic.shuffled[test:nrow(traffic.shuffled),1:4]
 traffic.class <- matrix(traffic.shuffled[test:nrow(traffic.shuffled),5], ncol = 1)
 
-traffic.data.range <- apply(traffic.shuffled[,-ncol(traffic.shuffled)], 2,range)
+traffic.data.range <- apply(traffic.shuffled[,], 2,range)
 
 ## Set the method and its parameters. In this case we use FRBCS.W algorithm
-method.type <- "FRBCS.W"
-control <- list(num.labels = 7, type.mf = "GAUSSIAN", type.tnorm = "MIN", type.snorm = "MAX", type.implication.func = "ZADEH")
-
+method.type <- "GFS.FR.MOGUL"
+#control <- list(num.labels = 7, type.mf = "GAUSSIAN", type.tnorm = "MIN", type.snorm = "MAX", type.implication.func = "ZADEH")
+#
+control <- list(persen_cross = 0.6, max.iter = 10, max.gen = 10, max.tune = 10, persen_mutant = 0.9,
+	       	epsilon = 0.4, name = "Traffic")
 ## Learning step: Generate fuzzy model
 object.cls <- frbs.learn(traffic.train, traffic.data.range, method.type, control)
 
