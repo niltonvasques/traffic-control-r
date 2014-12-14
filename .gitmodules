@@ -1,0 +1,3 @@
+[submodule "src/frbs"]
+	path = src/frbs
+	url = https://github.com/cran/frbs
