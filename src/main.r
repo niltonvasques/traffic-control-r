@@ -13,6 +13,9 @@ menu <- function(){
 	print( "-------[6] - PLOT-------------------------------------" )
 	print( "-------[7] - WM+COG-----------------------------------" )
 	print( "-------[8] - DENFIS+COG-------------------------------" )
+	print( "-------[9] - MOGUL+COG--------------------------------" )
+	print( "-------[10] - LT+COG----------------------------------" )
+	print( "-------[11] - COMPARISSON CHART-----------------------" )
 	print( "------------------------------------------------------" )
 }
 runall <- function(){
@@ -52,13 +55,31 @@ clear <- function() {
 	elements <- ls() [! ls() %in% c("menu","n","runall", "clear") ]
 	rm(list=elements)
 }
+
+comparisson <- function(){
+    result.test <- cbind(traffic.class , res.test)
+    x2 <- seq(from = 1, to = nrow(result.test))
+    plot(x2, result.test[, 1], col="red", main = "Em vermelho: Os resultados reais. Em azul: os resultados preditos", type = "l", ylab = "MG")
+    lines(x2, result.test[, 2], col="blue", type = "l")
+}
+
+readinteger <- function()
+{ 
+    n <- readline(prompt="Enter an integer: ")
+        if(!grepl("^[0-9]+$",n))
+        {
+            return(readinteger())
+        }
+
+    return(as.integer(n))
+}
+
 menu()
 
-n <- readline("OPCAO: ")
-
-while(n > 0 && n <= 11 ){
+n <- readinteger()
+while(TRUE){
 	if(is.na(n)){break}  # breaks when hit enter
-
+        if(n == 0) break;
 	if(n != 6) clear()
 	if(n == 1) 	source("traffic-WM+FIRST.MAX.r")
 	else if(n == 2) source("traffic-WM+LAST.MAX.r")
@@ -69,10 +90,10 @@ while(n > 0 && n <= 11 ){
 	else if(n == 7) source("traffic-WM+COG.r")
 	else if(n == 8) source("traffic-DENFIS+COG.r")
 	else if(n == 9) source("traffic-MOGUL+COG.r")
-	else if(n == 10) source("traffic-GEN2+COG.r")
-	else if(n == 11) source("traffic-LT+COG.r")
+	else if(n == 10) source("traffic-LT+COG.r")
+        else if(n == 11) comparisson()
 	menu()	
-	n <- readline("OPCAO: ")
+        n <- readinteger()
 }
 
 
