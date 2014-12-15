@@ -15,7 +15,7 @@ menu <- function(){
 	print( "-------[8] - GFS.MOGUL+COG----------------------------" )
 	print( "-------[9] - PLOTAR VARIAVEIS LINGUISTICAS------------" )
 	print( "-------[10] - EXECUTAR TODOS OS ALGORITMOS------------" )
-	print( "-------[11] - COMPARAR OS ALGORITMOS------------------" )
+	print( "-------[11] - COMPARAR OS RESULTADOS REAIS X PREDITOS-" )
 	print( "-------[0] - SAIR-------------------------------------" )
 	print( "------------------------------------------------------" )
 }
