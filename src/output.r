@@ -28,9 +28,3 @@ print("WM: Avaliacao do erro: ")
 print(err) 
 
 
-result.test <- cbind(traffic.class , res.test)
-x2 <- seq(from = 1, to = nrow(result.test))
-plot(x2, result.test[, 1], col="red", main = "Em vermelho: Os resultados reais. Em azul: os resultados preditos", type = "l", ylab = "MG")
-lines(x2, result.test[, 2], col="blue", type = "l")
-
-par(op)
