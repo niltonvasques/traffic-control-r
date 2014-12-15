@@ -28,3 +28,9 @@ print("WM: Avaliacao do erro: ")
 print(err) 
 
 
+result.test <- cbind(traffic.class , res.test)
+x2 <- seq(from = 1, to = nrow(result.test))
+plot(x2, result.test[, 1], col="red", main = "Mackey Glass: Predicting phase (the Real Data(red) Vs Sim. result(blue))", type = "l", ylab = "MG")
+lines(x2, result.test[, 2], col="blue", type = "l")
+
+par(op)
