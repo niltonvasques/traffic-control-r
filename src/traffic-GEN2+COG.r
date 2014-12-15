@@ -4,7 +4,7 @@ source("traffic-base.r")
 method.type <- "GFS.THRIFT"
 
 control <- list(popu.size = 5, num.labels = 7, persen_cross = 0.8,
-     max.gen = 15, persen_mutant = 0.3, type.tnorm = "MIN", type.snorm = "MAX", type.defuz = "COG",
+     max.gen = 5, persen_mutant = 0.3, type.tnorm = "MIN", type.snorm = "MAX", type.defuz = "COG",
      type.implication.func = "ZADEH", name = "Traffic")
 
 

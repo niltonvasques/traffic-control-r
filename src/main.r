@@ -5,17 +5,18 @@ menu <- function(){
 	print( "-------------------------MENU-------------------------" )
 	print( "------------------------------------------------------" )
 	print( "-------ESCOLHA O ALGORITMO QUE DESEJA EXECUTAR--------" )
-	print( "-------[1] - WM+FIRST.MAX-----------------------------" )
-	print( "-------[2] - WM+LAST.MAX------------------------------" )
-	print( "-------[3] - HyFIS+FIRST.MAX--------------------------" )
-	print( "-------[4] - HyFIS+LAST.MAX---------------------------" )
-	print( "-------[5] - RUN ALL----------------------------------" )
-	print( "-------[6] - PLOT-------------------------------------" )
-	print( "-------[7] - WM+COG-----------------------------------" )
-	print( "-------[8] - DENFIS+COG-------------------------------" )
-	print( "-------[9] - MOGUL+COG--------------------------------" )
-	print( "-------[10] - LT+COG----------------------------------" )
-	print( "-------[11] - COMPARISSON CHART-----------------------" )
+	print( "-------[1] - DENFIS+COG-------------------------------" )
+	print( "-------[2] - HyFIS+FIRST.MAX--------------------------" )
+	print( "-------[3] - HyFIS+LAST.MAX---------------------------" )
+	print( "-------[4] - WM+FIRST.MAX-----------------------------" )
+	print( "-------[5] - WM+LAST.MAX------------------------------" )
+	print( "-------[6] - WM+COG-----------------------------------" )
+	print( "-------[7] - GFS.LT.RS+COG----------------------------" )
+	print( "-------[8] - GFS.MOGUL+COG----------------------------" )
+	print( "-------[9] - PLOTAR VARIAVEIS LINGUISTICAS------------" )
+	print( "-------[10] - EXECUTAR TODOS OS ALGORITMOS------------" )
+	print( "-------[11] - COMPARAR OS ALGORITMOS------------------" )
+	print( "-------[0] - SAIR-------------------------------------" )
 	print( "------------------------------------------------------" )
 }
 runall <- function(){
@@ -65,7 +66,7 @@ comparisson <- function(){
 
 readinteger <- function()
 { 
-    n <- readline(prompt="Enter an integer: ")
+    n <- readline(prompt="Oque deseja? ")
         if(!grepl("^[0-9]+$",n))
         {
             return(readinteger())
@@ -79,22 +80,23 @@ menu()
 n <- readinteger()
 while(TRUE){
 	if(is.na(n)){break}  # breaks when hit enter
-        if(n == 0) break;
+    if(n == 0) break;
 	if(n != 6) clear()
-	if(n == 1) 	source("traffic-WM+FIRST.MAX.r")
-	else if(n == 2) source("traffic-WM+LAST.MAX.r")
-	else if(n == 3) source("traffic-HyFIS+FIRST.MAX.r")
-	else if(n == 4) source("traffic-HyFIS+LAST.MAX.r")
-	else if(n == 5) runall()
-	else if(n == 6) plotMF(object.cls)
-	else if(n == 7) source("traffic-WM+COG.r")
-	else if(n == 8) source("traffic-DENFIS+COG.r")
-	else if(n == 9) source("traffic-MOGUL+COG.r")
-	else if(n == 10) source("traffic-LT+COG.r")
-        else if(n == 11) comparisson()
+	if(n == 1) 	source("traffic-DENFIS+COG.r")
+	else if(n == 2) source("traffic-HyFIS+FIRST.MAX.r")
+	else if(n == 3) source("traffic-HyFIS+LAST.MAX.r")
+	else if(n == 4) source("traffic-WM+FIRST.MAX.r")
+	else if(n == 5) source("traffic-WM+LAST.MAX.r")
+	else if(n == 6) source("traffic-WM+COG.r")
+	else if(n == 7) source("traffic-LT+COG.r")
+	else if(n == 8) source("traffic-MOGUL+COG.r")
+	else if(n == 9) plotMF(object.cls)
+	else if(n == 10) runall()
+    else if(n == 11) comparisson()
 	menu()	
         n <- readinteger()
 }
+rm(list=ls(all=TRUE))
 
 
 
