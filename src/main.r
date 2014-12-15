@@ -66,7 +66,7 @@ comparisson <- function(){
 
 readinteger <- function()
 { 
-    n <- readline(prompt="Oque deseja? ")
+    n <- readline(prompt="O que deseja? ")
         if(!grepl("^[0-9]+$",n))
         {
             return(readinteger())
