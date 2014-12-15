@@ -1,7 +1,7 @@
-source("traffic-base.r")
+source("traffic-base-frbs.r")
 
 ## Set the method and its parameters. In this case we use WM algorithm
-method.type <- "GFS.THRIFT"
+method.type <- "GFS.LT.RS"
 
 
 control <- list(popu.size = 10, num.labels = 7, persen_mutant = 0.3, max.gen = 10,
