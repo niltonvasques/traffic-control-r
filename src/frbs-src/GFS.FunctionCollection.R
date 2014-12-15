@@ -1803,7 +1803,7 @@ generate.popu <- function(method.type = "GFS.FR.MOGUL", data.train = NULL,
 		type.tnorm <- params$type.tnorm
 		type.implication.func <- params$type.implication.func
 		## generate initial rules and membership function from  Wang & Mendel's method
-		type.mf = "TRIANGLE"
+		type.mf = "TRAPEZOID"
 		mod.init <- NULL
 		mod.init <- WM(data.train, num.labels, type.mf, type.tnorm = type.tnorm, type.implication.func = type.implication.func, 
 		               classification = FALSE, range.data = range.data)

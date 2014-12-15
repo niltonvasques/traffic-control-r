@@ -409,6 +409,7 @@ WM <- function(data.train, num.labels, type.mf = "GAUSSIAN", type.tnorm = "PRODU
 	
 	## build the rule into list of string
         print("AQUI 411")
+        print(type.mf)
         print(rule.data.num)
 	res <- generate.rule(rule.data.num, num.labels, names.fvalinput, names.fvaloutput)
 	rule <- res$rule
