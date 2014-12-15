@@ -82,21 +82,20 @@ while(TRUE){
 	if(is.na(n)){break}  # breaks when hit enter
     if(n == 0) break;
 	if(n != 6) clear()
-	if(n == 1) 	source("traffic-DENFIS+COG.r")
-	else if(n == 2) source("traffic-HyFIS+FIRST.MAX.r")
-	else if(n == 3) source("traffic-HyFIS+LAST.MAX.r")
-	else if(n == 4) source("traffic-WM+FIRST.MAX.r")
-	else if(n == 5) source("traffic-WM+LAST.MAX.r")
-	else if(n == 6) source("traffic-WM+COG.r")
-	else if(n == 7) source("traffic-LT+COG.r")
-	else if(n == 8) source("traffic-MOGUL+COG.r")
+	if(n == 1) 	{     rm(list=ls(all=TRUE)); source("traffic-DENFIS+COG.r")		}
+	else if(n == 2) { rm(list=ls(all=TRUE)); source("traffic-HyFIS+FIRST.MAX.r") }
+	else if(n == 3) { rm(list=ls(all=TRUE)); source("traffic-HyFIS+LAST.MAX.r")  }
+	else if(n == 4) { rm(list=ls(all=TRUE)); source("traffic-WM+FIRST.MAX.r")    }
+	else if(n == 5) { rm(list=ls(all=TRUE)); source("traffic-WM+LAST.MAX.r")     }
+	else if(n == 6) { rm(list=ls(all=TRUE)); source("traffic-WM+COG.r")			}
+	else if(n == 7) { rm(list=ls(all=TRUE)); source("traffic-LT+COG.r")			}
+	else if(n == 8) { rm(list=ls(all=TRUE)); source("traffic-MOGUL+COG.r")		}
 	else if(n == 9) plotMF(object.cls)
 	else if(n == 10) runall()
     else if(n == 11) comparisson()
 	menu()	
         n <- readinteger()
 }
-rm(list=ls(all=TRUE))
 
 
 
